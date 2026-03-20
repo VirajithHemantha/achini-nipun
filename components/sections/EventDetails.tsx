@@ -13,8 +13,8 @@ export default function EventDetails() {
   const eventDetails = [
     {
       label: 'Date',
-      value: 'June 18, 2026',
-      sub: 'Thursday',
+      value: 'May 30, 2026',
+      sub: 'Saturday',
       icon: Calendar,
     },
     {
@@ -264,7 +264,7 @@ export default function EventDetails() {
                 Kindly Respond
               </p>
               <p className="mt-3 text-lg font-light text-[#4f3d34]">
-                RSVP by June 10, 2026
+                RSVP by May 20, 2026
               </p>
             </div>
           </div>

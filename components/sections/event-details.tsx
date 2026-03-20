@@ -10,8 +10,8 @@ export function EventDetails() {
     {
       icon: Calendar,
       label: 'Date',
-      value: 'June 18, 2026',
-      detail: 'Thursday',
+      value: 'May 30, 2026',
+      detail: 'Saturday',
     },
     {
       icon: Clock3,

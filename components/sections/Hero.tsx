@@ -72,7 +72,7 @@ export default function Hero() {
           style={{ color: 'var(--primary)' }}
           variants={itemVariants}
         >
-          Shashini & Madhawa
+          VIMUKTHI & PIUMI
         </motion.h1>
 
         {/* Decorative line */}
@@ -90,6 +90,11 @@ export default function Hero() {
           className="text-xl md:text-2xl font-light text-foreground leading-relaxed mb-12 max-w-2xl mx-auto"
           variants={itemVariants}
         >
+          <span className="block text-sm md:text-base opacity-75 mb-4">
+            Bride's Parents: Mother - T H Anusha Shiranthi | Father - G Dayawansa <br />
+            & <br />
+            Groom's Parents: Mother - M Helan Dammika Fernando | Father - W A Nelson Meril Fernando
+          </span>
           Together with their families,{' '}
           <span className="font-serif">joyfully</span> invite you to celebrate
           their wedding.

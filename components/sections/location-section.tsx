@@ -20,7 +20,7 @@ export function LocationSection() {
     {
       icon: Mail,
       title: 'Email',
-      details: ['hello@shashiniandmadhawa.wedding'],
+      details: ['hello@wedding.com'],
     },
   ];
 

@@ -23,7 +23,7 @@ export function BlessingMessages() {
     },
     {
       id: 2,
-      author: "Madhawa's Family",
+      author: "VIMUKTHI's Family",
       message:
         'With joy in our hearts, we welcome this beautiful union. May your home be filled with laughter, understanding, and lasting blessings.',
       timestamp: '5 days ago',

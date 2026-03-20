@@ -131,11 +131,17 @@ export default function OpeningSequence({ onComplete }: OpeningSequenceProps) {
             transition={{ duration: 1 }}
           >
             <h1 className="text-5xl md:text-7xl font-light mb-6 text-white">
-              <span className="block mb-2">Shashini</span>
+              <span className="block mb-2">VIMUKTHI</span>
               <span className="text-secondary text-3xl md:text-4xl font-light mb-2">&</span>
-              <span className="block">Madhawa</span>
+              <span className="block">PIUMI</span>
             </h1>
-            <p className="text-xl md:text-2xl text-ivory font-light tracking-wide mt-8">
+            <p className="text-sm md:text-base text-ivory/80 font-light tracking-wide mt-6 mb-2">
+              Bride's Parents: Mother - T H Anusha Shiranthi | Father - G Dayawansa
+            </p>
+            <p className="text-sm md:text-base text-ivory/80 font-light tracking-wide mb-6">
+              Groom's Parents: Mother - M Helan Dammika Fernando | Father - W A Nelson Meril Fernando
+            </p>
+            <p className="text-xl md:text-2xl text-ivory font-light tracking-wide mt-2">
               Together with their families invite you
             </p>
             <p className="text-xl md:text-2xl text-ivory font-light tracking-wide">

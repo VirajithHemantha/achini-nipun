@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Calendar, Clock3, MapPin, Sparkles, Crown, Heart } from 'lucide-react';
+import { Calendar, Clock3, MapPin, Sparkles, Crown, Heart, Cross } from 'lucide-react';
 import Image from 'next/image';
 
 export default function CeremonyDetails() {
@@ -15,8 +15,8 @@ export default function CeremonyDetails() {
     {
       icon: Calendar,
       label: 'Date',
-      value: 'June 18, 2026',
-      sub: 'Thursday',
+      value: 'May 30, 2026',
+      sub: 'Saturday',
     },
     {
       icon: Clock3,
@@ -27,85 +27,76 @@ export default function CeremonyDetails() {
     {
       icon: MapPin,
       label: 'Venue',
-      value: 'Golden Rose Hotel',
-      sub: 'Colombo, Sri Lanka',
+      value: "St. Sebastian's Church - Godella",
+      sub: 'Live location available',
     },
   ];
 
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-[linear-gradient(180deg,#2c0710_0%,#4a0f18_50%,#1a0408_100%)] px-4 sm:px-6 lg:px-8 py-24 md:py-32"
+      className="relative overflow-hidden bg-[linear-gradient(180deg,#1f0610_0%,#451022_45%,#1b050d_100%)] px-4 sm:px-6 lg:px-8 py-24 md:py-32"
     >
       {/* Background Ornaments */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-0 top-0 h-full w-full opacity-[0.05] mix-blend-screen"
-          style={{ backgroundImage: `radial-gradient(circle at 20px 20px, #C9A227 1.2px, transparent 1.2px)`, backgroundSize: '40px 40px' }} />
+        <div className="absolute left-0 top-0 h-full w-full opacity-[0.07] mix-blend-screen"
+          style={{ backgroundImage: `radial-gradient(circle at 20px 20px, #C9A227 1.1px, transparent 1.1px)`, backgroundSize: '36px 36px' }} />
         <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#C9A227]/10 blur-[100px]" />
         <div className="absolute right-0 bottom-0 h-[40rem] w-[40rem] rounded-full bg-[#d81b3f]/10 blur-[120px]" />
+        <motion.div
+          animate={{ y: [0, -22, 0], x: [0, 18, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute top-10 right-12 h-40 w-40 rounded-full border border-[#C9A227]/30 bg-[#C9A227]/10 blur-[1px]"
+        />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="flex flex-col lg:flex-row items-center gap-10 sm:gap-12 md:gap-16 lg:gap-24">
 
-          {/* Image Side */}
+          {/* Visual Side */}
           <motion.div
             initial={{ opacity: 0, x: -50, rotate: -5 }}
             animate={inView ? { opacity: 1, x: 0, rotate: 0 } : {}}
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="w-full lg:w-1/2 relative flex justify-center perspective-[1000px]"
           >
-            {/* Soft backdrop glow */}
-            <div className="absolute inset-0 -m-8 rounded-full bg-[#C9A227]/20 blur-3xl" />
-
             <motion.div
               whileHover={{ scale: 1.02, rotateY: 5 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="relative h-[420px] sm:h-[520px] md:h-[600px] w-full max-w-[420px]"
+              className="relative h-[420px] sm:h-[520px] md:h-[600px] w-full max-w-[420px] overflow-hidden rounded-[30px] md:rounded-t-[200px] md:rounded-b-[30px] border border-[#C9A227]/60 shadow-[0_20px_50px_rgba(201,162,39,0.2)] bg-[linear-gradient(180deg,#1a0408_0%,#2c0710_55%,#120207_100%)]"
             >
-              {/* Ornate Arch Frames */}
               <div className="absolute -inset-6 rounded-t-[220px] rounded-b-[40px] border border-[#C9A227]/20 hidden md:block" />
               <div className="absolute -inset-3 rounded-t-[210px] rounded-b-[35px] border border-[#C9A227]/40 hidden md:block" />
 
-              {/* Masked Image Container */}
-              <div className="relative h-full w-full overflow-hidden rounded-[30px] md:rounded-t-[200px] md:rounded-b-[30px] border border-[#C9A227]/60 shadow-[0_20px_50px_rgba(201,162,39,0.2)] bg-[#1a0408]">
-                <Image
-                  src="/1.jpg"
-                  alt="Couple Cartoon"
-                  fill
-                  className="object-cover opacity-90 transition-transform duration-700 hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, 500px"
-                  priority
-                />
+              <Image
+                src="/images/IMG_2529.JPG.jpeg"
+                alt="Vimukthi and Piumi"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 500px"
+              />
 
-                {/* Elegant overlay gradient to blend bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0408] via-transparent to-transparent opacity-80" />
-                <div className="absolute bottom-0 left-0 w-full p-8 text-center text-[#f5e6c8]">
-                  <p className="font-serif text-2xl tracking-widest text-[#C9A227]">S & M</p>
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,2,7,0.2)_0%,rgba(18,2,7,0.75)_100%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(201,162,39,0.22),transparent_48%)]" />
+              <div className="absolute inset-0 opacity-[0.14]"
+                style={{ backgroundImage: 'linear-gradient(rgba(201,162,39,0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(201,162,39,0.55) 1px, transparent 1px)', backgroundSize: '38px 38px' }} />
+
+              <div className="relative z-10 flex h-full flex-col items-center justify-center px-8 text-center text-[#f5e6c8]">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#f0d18b]/40 bg-black/25 px-4 py-1.5 backdrop-blur-sm">
+                  <Cross className="h-3.5 w-3.5 text-[#f4ddab]" />
+                  <p className="text-[10px] uppercase tracking-[0.32em] text-[#f6dd9a] drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]">Blessed Union</p>
                 </div>
+                <h3 className="mt-5 font-serif text-4xl text-[#fff7de] drop-shadow-[0_4px_16px_rgba(0,0,0,0.75)]">
+                  VIMUKTHI <span className="text-[#f0d18b]">&amp;</span> PIUMI
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-[#f5e6c8]/80">
+                  "Love is patient, love is kind." Join us as we exchange vows in faith, gratitude, and joy.
+                </p>
+                <div className="mt-8 h-px w-28 bg-[#C9A227]/50" />
+                <p className="mt-5 text-xs uppercase tracking-[0.28em] text-[#C9A227]">May 30, 2026</p>
               </div>
 
-              {/* Secondary overlapping image for premium collage effect */}
-              <motion.div
-                initial={{ opacity: 0, x: -30, rotate: -15 }}
-                animate={inView ? { opacity: 1, x: 0, rotate: -8 } : {}}
-                transition={{ duration: 1.2, delay: 0.5, type: "spring", bounce: 0.4 }}
-                whileHover={{ scale: 1.05, rotate: -4, zIndex: 40 }}
-                className="absolute -left-4 sm:-left-8 md:-left-24 bottom-8 sm:bottom-12 md:bottom-24 w-36 md:w-48 aspect-[3/4] rounded-t-full rounded-b-2xl border-[6px] md:border-[8px] border-[#1a0408] shadow-[0_20px_40px_rgba(0,0,0,0.6)] overflow-hidden bg-[#2c0710] z-20 group"
-              >
-                <div className="relative w-full h-full rounded-t-full rounded-b-[14px] overflow-hidden">
-                  <Image
-                    src="/6.jpg"
-                    alt="Happy Brides Taking Images"
-                    fill
-                    className="object-cover transition-transform duration-[1.5s] group-hover:scale-110"
-                    sizes="(max-width: 768px) 150px, 200px"
-                  />
-                  <div className="absolute inset-0 mix-blend-overlay bg-[#C9A227]/10 pointer-events-none" />
-                </div>
-              </motion.div>
-
-              {/* Floating Element - Heart */}
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
@@ -151,7 +142,7 @@ export default function CeremonyDetails() {
             </h2>
 
             <p className="mb-12 text-lg leading-relaxed text-[#f5e6c8]/70 max-w-lg">
-              With immense joy in our hearts, we invite you to share our happiness as we exchange our vows. Join us to witness a breathtaking celebration of love, culture, and eternal union.
+              With immense joy in our hearts, we invite you to share our happiness as we exchange our vows before God. Join us for a sacred Christian celebration of faith, love, and lifelong commitment.
             </p>
 
             <div className="flex flex-col gap-5">
@@ -164,7 +155,7 @@ export default function CeremonyDetails() {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
                     whileHover={{ x: 10, backgroundColor: 'rgba(201,162,39,0.08)' }}
-                    className="group relative flex items-center gap-6 overflow-hidden rounded-2xl border border-[#C9A227]/20 bg-[#2c0710]/40 p-5 shadow-lg backdrop-blur-md transition-all cursor-default"
+                    className="group relative flex items-center gap-6 overflow-hidden rounded-2xl border border-[#C9A227]/25 bg-[linear-gradient(120deg,rgba(44,7,16,0.72)_0%,rgba(62,13,25,0.55)_100%)] p-5 shadow-lg backdrop-blur-md transition-all cursor-default"
                   >
                     <div className="absolute left-0 top-0 w-1 h-full bg-[#C9A227] scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-300" />
 
@@ -202,8 +193,8 @@ export default function CeremonyDetails() {
                 <span className="w-6 h-[1px] bg-[#C9A227]"></span> Guest Notes
               </h4>
               <div className="space-y-2">
-                <p className="text-[#f5e6c8]/80 text-sm md:text-base"><span className="text-[#C9A227]">Dress Code:</span> Formal Kandyan / Western Formal</p>
-                <p className="text-[#f5e6c8]/80 text-sm md:text-base"><span className="text-[#C9A227]">Reception:</span> To follow immediately after the ceremony</p>
+                <p className="text-[#f5e6c8]/80 text-sm md:text-base"><span className="text-[#C9A227]">Dress Code:</span> Church Formal / Elegant Attire</p>
+                <p className="text-[#f5e6c8]/80 text-sm md:text-base"><span className="text-[#C9A227]">Reception:</span> To follow immediately after the church ceremony</p>
               </div>
             </motion.div>
 

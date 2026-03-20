@@ -3,28 +3,27 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import Image from 'next/image';
 import { Heart, Stars, Sparkles, BookHeart, PartyPopper, Camera, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const storyItems = [
   {
     id: 0,
     chapter: "Chapter I",
-    title: "The First Glance",
-    subtitle: "A Magical Beginning",
-    content: "From the first moment our eyes met, we knew this was destiny. What started as a beautiful coincidence blossomed into a love story written in the stars.",
+    title: "How We Met",
+    subtitle: "2012",
+    content: "We met in 2012, 14 years ago. What began as friendship slowly grew into deep love, trust, and a lifelong bond.",
     icon: Stars,
     color: "#ff4d6d",
     gradient: "from-[#ff4d6d]/10 to-[#ffb3c1]/20",
     accentBg: "bg-[#ff4d6d]",
-    tag: "Beginning",
+    tag: "2012",
   },
   {
     id: 1,
     chapter: "Chapter II",
-    title: "Seasons Together",
-    subtitle: "Growing in Love",
-    content: "Through seasons of laughter and dreams shared under the same sky, we discovered that true love is a journey of becoming the best versions of ourselves together.",
+    title: "Years Together",
+    subtitle: "14 Years of Love",
+    content: "Over the years, we supported each other through every season of life. Today, with grateful hearts, we are ready to begin our forever as husband and wife.",
     icon: BookHeart,
     color: "#c084fc",
     gradient: "from-[#c084fc]/10 to-[#e9d5ff]/20",
@@ -34,9 +33,9 @@ const storyItems = [
   {
     id: 2,
     chapter: "Chapter III",
-    title: "The Proposal",
-    subtitle: "A Promise Made",
-    content: "A perfect moment frozen in time. With trembling hands and full hearts, a question was asked and a resounding 'yes' echoed into our forever.",
+    title: "The Promise",
+    subtitle: "A Sacred Yes",
+    content: "With prayer and joy, we said yes to this new chapter. Your love and blessings make this day even more meaningful.",
     icon: Camera,
     color: "#f59e42",
     gradient: "from-[#f59e42]/10 to-[#fde68a]/20",
@@ -47,8 +46,8 @@ const storyItems = [
     id: 3,
     chapter: "Chapter IV",
     title: "Forever Begins",
-    subtitle: "The Eternal Promise",
-    content: "Today, we celebrate not just our union, but the beautiful families and cherished friends who have walked beside us. Welcome to our eternal moment.",
+    subtitle: "Our Wedding Day",
+    content: "Now we celebrate our wedding day with the people we love. Thank you for being part of our story.",
     icon: PartyPopper,
     color: "#10b981",
     gradient: "from-[#10b981]/10 to-[#a7f3d0]/20",
@@ -95,10 +94,8 @@ export default function StorySection() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#faf7f2] via-transparent to-[#faf7f2] pointer-events-none" />
 
-      {/* ── Decorative watermark image ── */}
-      <div className="absolute right-0 bottom-0 w-48 h-48 md:w-72 md:h-72 opacity-[0.08] pointer-events-none select-none">
-        <Image src="/50.png" alt="" fill className="object-contain" />
-      </div>
+      {/* Decorative watermark shape */}
+      <div className="absolute bottom-0 right-0 h-48 w-48 select-none rounded-full bg-[radial-gradient(circle,rgba(255,143,163,0.22),transparent_72%)] opacity-40 blur-sm md:h-72 md:w-72 pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
 
