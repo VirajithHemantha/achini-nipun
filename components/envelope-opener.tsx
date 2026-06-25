@@ -54,7 +54,7 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
           className="fixed inset-0 z-50 overflow-hidden"
         >
           {/* Background */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(201,162,39,0.12),transparent_35%),linear-gradient(135deg,#2a060c_0%,#4a0f18_38%,#681322_65%,#2c0710_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(201,162,39,0.08),transparent_40%),linear-gradient(135deg,#fdfbf7_0%,#f9f6f0_38%,#ffffff_65%,#fcfcfc_100%)]" />
 
           {/* Soft ambient glow */}
           <motion.div
@@ -161,7 +161,7 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
                 }}
               >
                 <div
-                  className="h-5 w-3 rounded-full bg-gradient-to-b from-[#f4d6da] via-[#e8a9b5] to-[#7d1a2f] shadow-[0_0_14px_rgba(255,220,220,0.18)]"
+                  className="h-5 w-3 rounded-full bg-gradient-to-b from-[#fefefe] via-[#fdfbf7] to-[#e6d5b0] shadow-[0_0_14px_rgba(201,162,39,0.15)]"
                   style={{
                     transform: `scale(${petal.scale}) rotate(18deg)`,
                     borderRadius: '70% 30% 70% 30% / 70% 30% 70% 30%',
@@ -191,12 +191,12 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
             >
               <div className="mb-3 flex items-center justify-center gap-4">
                 <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#C9A227]/70" />
-                <p className="text-[10px] uppercase tracking-[0.45em] text-[#f5e6c8]/80">
+                <p className="text-[10px] uppercase tracking-[0.45em] text-[#a67c00]">
                   A Wedding Invitation
                 </p>
                 <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#C9A227]/70" />
               </div>
-              <p className="text-[11px] tracking-[0.24em] text-[#f5e6c8]/70">
+              <p className="text-[11px] tracking-[0.24em] text-[#8c6a16]/80">
                 Unveil the moment
               </p>
             </motion.div>
@@ -335,10 +335,10 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
                       transition={{ duration: 0.35 }}
                       className="translate-y-4"
                     >
-                      <h3 className="font-serif text-[1.7rem] tracking-[0.14em] text-[#6d1424] drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)] flex items-center justify-center gap-4 sm:gap-6">
-                        <span>VIMUKTHI</span>
+                      <h3 className="font-serif text-[1.7rem] tracking-[0.14em] text-[#8c6a16] drop-shadow-[0_2px_8px_rgba(201,162,39,0.18)] flex items-center justify-center gap-4 sm:gap-6">
+                        <span>ACHINI</span>
                         <span aria-hidden="true">&amp;</span>
-                        <span>PIUMI</span>
+                        <span>NIPUN</span>
                       </h3>
                       <div className="mt-4 flex items-center justify-center gap-3">
                         <span className="h-px w-10 bg-[#C9A227]/50" />
@@ -356,9 +356,9 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
                       repeat: !isOpen ? Infinity : 0,
                       ease: 'easeInOut',
                     }}
-                    className="absolute left-1/2 top-[54%] z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#f2d89c]/40 bg-[radial-gradient(circle_at_30%_30%,#a61d35_0%,#7a1226_55%,#5b0d1c_100%)] shadow-[0_10px_30px_rgba(90,13,28,0.45)]"
+                    className="absolute left-1/2 top-[54%] z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#d4af37]/40 bg-[radial-gradient(circle_at_30%_30%,#e6c86a_0%,#c9a227_55%,#a67c00_100%)] shadow-[0_10px_30px_rgba(201,162,39,0.45)]"
                   >
-                    <span className="font-serif text-lg text-[#f5e6c8]">V ✦ P</span>
+                    <span className="font-serif text-lg text-[#ffffff]">A ✦ N</span>
                   </motion.div>
 
                   {/* Hover sheen */}
@@ -396,7 +396,7 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
                     {/* Card frame */}
                     <div className="absolute inset-3 rounded-[18px] border border-[#C9A227]/25" />
                     <div className="absolute left-1/2 top-4 h-8 w-8 -translate-x-1/2 rounded-full border border-[#C9A227]/50 bg-white/70 text-center text-[10px] leading-8 text-[#8c6a16]">
-                      VP
+                      AN
                     </div>
 
                     {/* Card ornament */}
@@ -406,12 +406,10 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
                           Together with their families
                         </p>
                         <p className="text-[9px] leading-5 text-[#6a4d0d]">
-                          Bride, the loving daughter of<br />
-                          <span className="font-semibold">T H ANUSHA SHIRANTHI</span> (Mother) and <span className="font-semibold">G DAYAWANSA</span> (Father)
+                          <span className="font-semibold">MR. & MRS. PERERA</span>
                         </p>
                         <p className="text-[9px] leading-5 text-[#6a4d0d]">
-                          Groom, the loving son of<br />
-                          <span className="font-semibold">M HELAN DAMMIKA FERNANDO</span> (Mother) and <span className="font-semibold">W A NELSON MERIL FERNANDO</span> (Father)
+                          <span className="font-semibold">MR. & MRS. GURUSINGHA</span>
                         </p>
                       </div>
 
@@ -421,12 +419,12 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
                         <span className="h-px w-10 bg-[#C9A227]/45" />
                       </div>
 
-                      <h2 className="mt-5 font-serif text-4xl font-light tracking-[0.08em] text-[#6d1424]">
-                        VIMUKTHI
+                      <h2 className="mt-5 font-serif text-4xl font-light tracking-[0.08em] text-[#8c6a16]">
+                        ACHINI
                       </h2>
-                      <p className="mt-1 font-serif text-lg italic text-[#b08a1f]">&</p>
-                      <h2 className="font-serif text-4xl font-light tracking-[0.08em] text-[#6d1424]">
-                        PIUMI
+                      <p className="mt-1 font-serif text-lg italic text-[#c9a227]">&</p>
+                      <h2 className="font-serif text-4xl font-light tracking-[0.08em] text-[#8c6a16]">
+                        NIPUN
                       </h2>
 
                       <p className="mx-auto mt-5 max-w-[240px] text-sm leading-7 text-[#5f5146]">
@@ -440,7 +438,7 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
                       </div>
 
                       <p className="mt-5 text-[11px] uppercase tracking-[0.36em] text-[#8c6a16]">
-                        May 30, 2026
+                        July 23, 2026
                       </p>
                     </div>
                   </div>
@@ -452,7 +450,7 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
                 initial={{ opacity: 0, y: 10 }}
                 animate={!isOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -6 }}
                 transition={{ duration: 0.4 }}
-                className="mt-6 text-center text-[11px] uppercase tracking-[0.45em] text-[#f5e6c8]/80"
+                className="mt-6 text-center text-[11px] uppercase tracking-[0.45em] text-[#a67c00]/80"
               >
                 Touch to Unveil
               </motion.p>
