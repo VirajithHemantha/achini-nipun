@@ -19,10 +19,6 @@ export const metadata: Metadata = {
   title: 'ACHINI & NIPUN Wedding',
   description: 'Join us as we celebrate the blessed Christian union of ACHINI and NIPUN on July 23, 2026.',
   generator: 'v0.app',
-  icons: {
-    icon: '/wedding-icon.png',
-    apple: '/wedding-icon.png',
-  },
 }
 
 export const viewport: Viewport = {

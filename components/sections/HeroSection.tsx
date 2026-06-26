@@ -13,7 +13,7 @@ function GuestInvitation() {
 
   if (prefix && name) {
     return (
-      <span className="block my-3 font-medium text-[#c9a227] text-sm sm:text-base tracking-[0.25em]">
+      <span className="block my-5 font-serif font-bold text-[#c9a227] text-2xl sm:text-3xl tracking-[0.15em] drop-shadow-sm">
         {prefix} {name}
       </span>
     );
