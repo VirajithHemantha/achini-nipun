@@ -1,6 +1,6 @@
 function doPost(e) {
   try {
-    var spreadsheetId = '1rRXSwHlgJbFhVVsCGf1CWLzDH4JcWOcDp0zyZJmDJ58';
+    var spreadsheetId = '1LR-vud_AH0rQlr4qv_amDm1Z_shDSDnUnw2MVwEEzxE';
     var ss = SpreadsheetApp.openById(spreadsheetId);
 
     var body = e && e.postData && e.postData.contents ? e.postData.contents : '{}';
@@ -16,14 +16,13 @@ function doPost(e) {
       }
 
       if (rsvpSheet.getLastRow() === 0) {
-        rsvpSheet.appendRow(['submittedAt', 'name', 'guests', 'dietary', 'source']);
+        rsvpSheet.appendRow(['submittedAt', 'name', 'guests', 'source']);
       }
 
       rsvpSheet.appendRow([
         submittedAt,
         payload.name || '',
         payload.guests || '',
-        payload.dietary || '',
         payload.source || 'website',
       ]);
     } else if (formType === 'wish') {

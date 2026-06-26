@@ -6,34 +6,11 @@ import { useInView } from 'react-intersection-observer';
 import { Heart, PenLine, Send, Stars, UserRound, Sparkles, Quote } from 'lucide-react';
 import { submitToGoogleSheets } from '@/lib/googleSheets';
 
-interface Blessing {
-  id: string;
-  name: string;
-  message: string;
-  timestamp: string;
-}
-
-const initialBlessings: Blessing[] = [
-  {
-    id: '1',
-    name: 'Priya Sharma',
-    message:
-      'Wishing you both a lifetime of happiness, grace, and countless beautiful moments together. So excited for the big day!',
-    timestamp: '2 days ago',
-  },
-  {
-    id: '2',
-    name: 'Rajesh Kumar',
-    message:
-      'May your love continue to grow stronger with each passing day. You two are absolutely perfect for each other!',
-    timestamp: '5 days ago',
-  },
-];
 
 export default function BlessingsSection() {
   const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true });
 
-  const [blessings, setBlessings] = useState<Blessing[]>(initialBlessings);
+
   const [newBlessing, setNewBlessing] = useState('');
   const [visitorName, setVisitorName] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -67,14 +44,7 @@ export default function BlessingsSection() {
           message: newBlessing.trim(),
         });
 
-        const blessing: Blessing = {
-          id: Date.now().toString(),
-          name: visitorName.trim(),
-          message: newBlessing.trim(),
-          timestamp: 'just now',
-        };
 
-        setBlessings([blessing, ...blessings]);
         setNewBlessing('');
         setVisitorName('');
         setSubmitted(true);
@@ -196,12 +166,12 @@ export default function BlessingsSection() {
           </p>
         </motion.div>
 
-        <div className="grid items-start gap-8 md:gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-12">
+        <div className="flex justify-center items-start">
           <motion.div
-            initial={{ opacity: 0, x: -30, rotateY: -10 }}
-            animate={inView ? { opacity: 1, x: 0, rotateY: 0 } : {}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.2, type: 'spring', bounce: 0.4 }}
-            className="relative perspective-[1000px]"
+            className="relative perspective-[1000px] w-full max-w-xl"
           >
             <div className="relative overflow-hidden rounded-[2.5rem] border border-[#f2d89c]/60 bg-[linear-gradient(150deg,rgba(255,255,255,0.86)_0%,rgba(253,251,247,0.8)_100%)] p-6 shadow-[0_20px_52px_rgba(201,162,39,0.18)] backdrop-blur-xl md:p-10">
               <div className="absolute -right-[10%] -top-[10%] h-[150px] w-[150px] rounded-full bg-[#f2d89c]/30 blur-[40px]" />
@@ -292,52 +262,6 @@ export default function BlessingsSection() {
             </div>
           </motion.div>
 
-          <div className="relative space-y-6 pt-4">
-            <div className="pointer-events-none absolute inset-x-0 bottom-[-2rem] z-20 h-20 bg-gradient-to-t from-[#ffffff] to-transparent" />
-
-            <AnimatePresence mode="popLayout">
-              {blessings.map((blessing, index) => (
-                <motion.div
-                  layout
-                  key={blessing.id}
-                  initial={{ opacity: 0, y: 30, scale: 0.8, rotate: Math.random() * 4 - 2 }}
-                  animate={inView ? { opacity: 1, y: 0, scale: 1, rotate: 0 } : {}}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.3 + index * 0.1,
-                    type: 'spring',
-                    bounce: 0.4,
-                  }}
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  className="group relative overflow-hidden rounded-[2rem] border border-[#f2d89c]/60 bg-white/70 p-6 shadow-sm backdrop-blur-md transition-all hover:bg-white hover:shadow-[0_15px_30px_rgba(201,162,39,0.2)] md:p-8"
-                >
-                  <div className="absolute -right-[10px] -top-[10px] opacity-10 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110">
-                    <Quote className="h-24 w-24 fill-current text-[#d4af37]" />
-                  </div>
-
-                  <div className="relative z-10">
-                    <p className="mb-4 text-lg font-light leading-relaxed text-[#3a3022]">"{blessing.message}"</p>
-
-                    <div className="mt-6 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#f2d89c] to-[#c9a227] text-white shadow-sm">
-                          <span className="font-serif font-bold tracking-widest">{blessing.name.charAt(0)}</span>
-                        </div>
-                        <div>
-                          <h4 className="font-serif text-lg font-medium text-[#3a3022]">{blessing.name}</h4>
-                          <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#a67c00]">{blessing.timestamp}</p>
-                        </div>
-                      </div>
-
-                      <motion.div whileHover={{ scale: 1.2, rotate: 5 }} className="cursor-pointer text-[#d4af37] hover:text-[#c9a227]">
-                        <Heart className="h-6 w-6 fill-current transition-colors" />
-                      </motion.div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </div>
         </div>
       </div>
     </section>

@@ -1,8 +1,26 @@
 'use client';
 
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Cross, Heart, Sparkles } from 'lucide-react';
+
+function GuestInvitation() {
+  const searchParams = useSearchParams();
+  const prefix = searchParams.get('p');
+  const name = searchParams.get('n');
+
+  if (prefix && name) {
+    return (
+      <span className="block my-3 font-medium text-[#c9a227] text-sm sm:text-base tracking-[0.25em]">
+        {prefix} {name}
+      </span>
+    );
+  }
+  
+  return null;
+}
 
 export default function HeroSection() {
   const { ref, inView } = useInView({ threshold: 0.05, triggerOnce: true });
@@ -52,12 +70,15 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.25 }}
           className="mt-10 max-w-2xl"
         >
-          <p className="text-xs uppercase leading-loose tracking-[0.2em] text-[#8c6a16] sm:text-sm">
+          <div className="text-xs uppercase leading-loose tracking-[0.2em] text-[#8c6a16] sm:text-sm">
             TOGETHER WITH THEIR PARENTS<br/>
             MR. &amp; MRS. PERERA AND MR. &amp; MRS. GURUSINGHA<br/><br/>
-            REQUEST THE HONOUR OF THE PRESENCE OF<br/>
+            REQUEST THE HONOUR OF THE PRESENCE OF
+            <Suspense fallback={<div className="my-3"></div>}>
+              <GuestInvitation />
+            </Suspense>
             AT THE CELEBRATION OF THEIR MARRIAGE
-          </p>
+          </div>
         </motion.div>
 
         <motion.div

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Send, Heart, Mail, User, Users, Coffee, Sparkles } from 'lucide-react';
@@ -11,8 +11,17 @@ export default function RSVPSection() {
   const [formData, setFormData] = useState({
     name: '',
     guests: '1',
-    dietary: '',
   });
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get('n');
+      if (name) {
+        setFormData(prev => ({ ...prev, name }));
+      }
+    }
+  }, []);
   const [submitted, setSubmitted] = useState(false);
   const [isHoveringSubmit, setIsHoveringSubmit] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,13 +45,12 @@ export default function RSVPSection() {
         formType: 'rsvp',
         name: formData.name,
         guests: formData.guests,
-        dietary: formData.dietary,
       });
 
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ name: '', guests: '1', dietary: '' });
+        setFormData({ name: '', guests: '1' });
       }, 4000);
     } catch (error) {
       setSubmitError('Unable to submit right now. Please try again.');
@@ -132,7 +140,7 @@ export default function RSVPSection() {
             </span>
           </h2>
           <p className="mx-auto mt-8 max-w-lg text-lg text-[#8c7a6b] leading-relaxed font-bold uppercase tracking-[0.1em]">
-            PLEASE RSVP BY 1ST OF JULY 2026
+            PLEASE RSVP BY 5TH OF JULY 2026
           </p>
           <p className="mx-auto mt-2 max-w-lg text-base text-[#8c7a6b] leading-relaxed uppercase tracking-[0.1em]">
             ACHINI: 076 637 3619 <br/>
@@ -211,20 +219,7 @@ export default function RSVPSection() {
                       </div>
                     </div>
 
-                    {/* Dietary Input */}
-                    <div className="group relative">
-                      <label className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#a67c00]">
-                        <Coffee className="h-4 w-4" /> Dietary Notes
-                      </label>
-                      <input
-                        type="text"
-                        name="dietary"
-                        value={formData.dietary}
-                        onChange={handleChange}
-                        placeholder="Allergies, Vegan, etc."
-                        className="w-full rounded-2xl border border-[#f2d89c]/60 bg-white/65 px-5 py-4 text-[#3a3022] placeholder-[#a67c00]/50 outline-none transition-all duration-300 focus:border-[#c9a227] focus:bg-white focus:shadow-[0_10px_20px_rgba(201,162,39,0.12)] group-hover:bg-white/90"
-                      />
-                    </div>
+
                   </div>
 
                   {/* Creative Submit Button */}

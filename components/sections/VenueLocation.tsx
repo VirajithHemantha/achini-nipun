@@ -99,7 +99,7 @@ export default function VenueLocation() {
                   <span className="h-1.5 w-1.5 rounded-full bg-[#c9a227]" /> Dalupotha
                 </p>
                 <p className="text-lg leading-relaxed text-[#8c7a6b]">
-                  The ceremony will be held at this beautiful church. Please arrive by 3:30 PM to find your seats.
+                  The ceremony will be held at this beautiful church. Please arrive by 4:00 PM to find your seats.
                 </p>
               </div>
 
