@@ -160,7 +160,7 @@ export default function CountdownSection() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#8c7a6b] sm:text-lg">
-            Every second brings us closer to our blessed wedding day. We cannot wait to celebrate this grace-filled moment with you.
+            Every second brings us closer to our blessed wedding day. We cannot wait to celebrate this Grace filled occasion with you.
           </p>
         </motion.div>
 
