@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, MapPin, Navigation, Sparkles } from 'lucide-react';
 
-const LIVE_LOCATION_URL = 'https://maps.app.goo.gl/t46btSpE7AFVTy7h9';
-const FUNCTION_LOCATION_URL = 'https://maps.app.goo.gl/bVb1w8w1eLL2oXh47';
+const LIVE_LOCATION_URL = 'https://www.google.com/maps/place/St.+Anthony\\'s+Shrine+-+Dalupotha+%7C+%E0%B7%83%E0%B7%8F%E0%B6%B1%E0%B7%8A%E0%B6%AD+%E0%B6%85%E0%B6%B1%E0%B7%8A%E0%B6%AD%E0%B7%9D%E0%B6%B1%E0%B7%92+%E0%B7%83%E0%B7%92%E0%B6%AF%E0%B7%8A%E0%B6%B0%E0%B7%83%E0%B7%8A%E0%B6%AE%E0%B7%8F%E0%B6%B1%E0%B6%BA+-+%E0%B6%AF%E0%B6%BD%E0%B7%94%E0%B6%B4%E0%B7%9C%E0%B6%AD/@7.2269648,79.8517337,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae2eeb803d6ada7:0xd21538072af3910e!8m2!3d7.2269648!4d79.8517337!16s%2Fg%2F1tks4rsh';
+const FUNCTION_LOCATION_URL = 'https://www.google.com/maps/place/Avenra+Gardens+Hotel+Negombo/@7.2175792,79.8554087,17z/data=!3m1!4b1!4m9!3m8!1s0x3ae2eec1cf287c89:0xe14018d2425ce2f2!5m2!4m1!1i2!8m2!3d7.2175792!4d79.8554087!16s%2Fg%2F11cnsfsnjt';
 
 export default function VenueLocation() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
