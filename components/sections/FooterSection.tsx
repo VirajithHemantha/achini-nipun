@@ -1,9 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Heart, MapPin, Sparkles } from 'lucide-react';
+import { Heart, Sparkles } from 'lucide-react';
 
-const LIVE_LOCATION_URL = 'https://maps.app.goo.gl/pikUWZebfsNYjp4i6?g_st=iw';
+
 
 export default function FooterSection() {
   return (
@@ -39,15 +39,7 @@ export default function FooterSection() {
             <p className="mx-auto max-w-xl text-sm font-light leading-relaxed text-[#8c7a6b]">
               We look forward to sharing our joy and celebrating our holy union surrounded by the people we love most.
             </p>
-            <a
-              href={LIVE_LOCATION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-7 inline-flex items-center justify-center gap-2 self-center rounded-full border border-[#c9a227]/40 bg-white/50 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#a67c00] transition-colors hover:bg-[#f2d89c]/40"
-            >
-              <MapPin className="h-4 w-4" />
-              St. Anthony's Church, Dalupotha
-            </a>
+
           </motion.div>
         </div>
 
