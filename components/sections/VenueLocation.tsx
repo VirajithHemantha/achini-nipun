@@ -7,7 +7,7 @@ import { ExternalLink, MapPin, Navigation, Sparkles } from 'lucide-react';
 const LIVE_LOCATION_URL = "https://www.google.com/maps/place/St.+Anthony's+Shrine+-+Dalupotha+%7C+%E0%B7%83%E0%B7%8F%E0%B6%B1%E0%B7%8A%E0%B6%AD+%E0%B6%85%E0%B6%B1%E0%B7%8A%E0%B6%AD%E0%B7%9D%E0%B6%B1%E0%B7%92+%E0%B7%83%E0%B7%92%E0%B6%AF%E0%B7%8A%E0%B6%B0%E0%B7%83%E0%B7%8A%E0%B6%AE%E0%B7%8F%E0%B6%B1%E0%B6%BA+-+%E0%B6%AF%E0%B6%BD%E0%B7%94%E0%B6%B4%E0%B7%9C%E0%B6%AD/@7.2269648,79.8517337,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae2eeb803d6ada7:0xd21538072af3910e!8m2!3d7.2269648!4d79.8517337!16s%2Fg%2F1tks4rsh";
 const FUNCTION_LOCATION_URL = 'https://www.google.com/maps/place/Avenra+Gardens+Hotel+Negombo/@7.2175792,79.8554087,17z/data=!3m1!4b1!4m9!3m8!1s0x3ae2eec1cf287c89:0xe14018d2425ce2f2!5m2!4m1!1i2!8m2!3d7.2175792!4d79.8554087!16s%2Fg%2F11cnsfsnjt';
 
-export default function VenueLocation() {
+export default function VenueLocation({ hideReception = false }: { hideReception?: boolean }) {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
@@ -50,7 +50,7 @@ export default function VenueLocation() {
           >
             <Sparkles className="h-4 w-4 text-[#c9a227]" />
             <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#a67c00] sm:text-sm">
-              Church & Function Venues
+              {hideReception ? 'Church Venue' : 'Church & Function Venues'}
             </span>
           </motion.div>
 
@@ -78,7 +78,7 @@ export default function VenueLocation() {
             We've carefully selected these beautiful venues to host our special day. We look forward to seeing you there.
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-2 lg:gap-8">
+        <div className={`grid grid-cols-1 items-stretch gap-5 ${hideReception ? 'max-w-xl mx-auto' : 'lg:grid-cols-2 lg:gap-8'}`}>
           {/* Church Location Card */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -119,6 +119,7 @@ export default function VenueLocation() {
           </motion.div>
 
           {/* Reception Location Card */}
+          {!hideReception && (
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -156,6 +157,7 @@ export default function VenueLocation() {
               </div>
             </div>
           </motion.div>
+          )}
         </div>
       </div>
     </section>

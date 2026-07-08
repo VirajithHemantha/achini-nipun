@@ -7,12 +7,22 @@ function doPost(e) {
     var payload = JSON.parse(body);
 
     var formType = String(payload.formType || '').toLowerCase();
+    var eventType = String(payload.event || 'wedding').toLowerCase();
     var submittedAt = payload.submittedAt || new Date().toISOString();
 
+    // Determine the sheet name based on the event type
+    // Main wedding uses the original 'rsvp' and 'wish' sheets to preserve existing data
+    var sheetName;
+    if (eventType === 'wedding') {
+      sheetName = formType; // 'rsvp' or 'wish'
+    } else {
+      sheetName = eventType + ' ' + formType; // e.g. 'homecoming rsvp', 'churchfunction wish'
+    }
+
     if (formType === 'rsvp') {
-      var rsvpSheet = ss.getSheetByName('rsvp');
+      var rsvpSheet = ss.getSheetByName(sheetName);
       if (!rsvpSheet) {
-        rsvpSheet = ss.insertSheet('rsvp');
+        rsvpSheet = ss.insertSheet(sheetName);
       }
 
       if (rsvpSheet.getLastRow() === 0) {
@@ -26,9 +36,9 @@ function doPost(e) {
         payload.source || 'website',
       ]);
     } else if (formType === 'wish') {
-      var wishSheet = ss.getSheetByName('wish');
+      var wishSheet = ss.getSheetByName(sheetName);
       if (!wishSheet) {
-        wishSheet = ss.insertSheet('wish');
+        wishSheet = ss.insertSheet(sheetName);
       }
 
       if (wishSheet.getLastRow() === 0) {

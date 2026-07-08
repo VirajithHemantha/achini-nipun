@@ -9,6 +9,7 @@ export default function AdminPage() {
   const [generatedLink, setGeneratedLink] = useState('');
   const [copiedLink, setCopiedLink] = useState(false);
   const [copiedMessage, setCopiedMessage] = useState(false);
+  const [eventType, setEventType] = useState('wedding');
   const [baseUrl, setBaseUrl] = useState('');
 
   useEffect(() => {
@@ -20,16 +21,26 @@ export default function AdminPage() {
   const generateLink = () => {
     if (!guestName.trim()) return;
     const url = new URL(baseUrl);
+    if (eventType === 'homecoming') {
+      url.pathname = '/homecoming';
+    } else if (eventType === 'churchfunction') {
+      url.pathname = '/churchfunction';
+    }
     url.searchParams.set('p', prefix);
     url.searchParams.set('n', guestName.trim());
     setGeneratedLink(url.toString());
   };
 
+  const eventName = 
+    eventType === 'homecoming' ? 'homecoming invitation' : 
+    eventType === 'churchfunction' ? 'church ceremony invitation' : 
+    'wedding invitation';
+
   const fullMessage = `Dear ${prefix} ${guestName} ❤️
 
 With joyful hearts, we warmly invite you and your family to celebrate one of the most special days of our lives as we begin our journey together.
 
-Please view our wedding invitation and all the event details through the link below 🌐:
+Please view our ${eventName} and all the event details through the link below 🌐:
 
 ${generatedLink}
 
@@ -82,7 +93,20 @@ With love,
                   placeholder="e.g. Sanjaya"
                   className="w-full h-14 px-4 rounded-xl border border-[#f2d89c]/60 bg-white/65 text-[#3a3022] placeholder-[#d4af37]/50 outline-none focus:border-[#c9a227] focus:ring-1 focus:ring-[#c9a227] transition-all"
                 />
-              </div>
+            </div>
+            </div>
+            
+            <div>
+              <label className="block text-xs font-bold uppercase tracking-[0.15em] text-[#a67c00] mb-2">Event</label>
+              <select 
+                value={eventType}
+                onChange={(e) => setEventType(e.target.value)}
+                className="w-full h-14 px-4 rounded-xl border border-[#f2d89c]/60 bg-white/65 text-[#3a3022] outline-none focus:border-[#c9a227] focus:ring-1 focus:ring-[#c9a227] transition-all"
+              >
+                <option value="wedding">Wedding</option>
+                <option value="homecoming">Homecoming</option>
+                <option value="churchfunction">Church Only</option>
+              </select>
             </div>
 
             <button 

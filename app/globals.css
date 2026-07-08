@@ -41,9 +41,25 @@
   --radius: 0.5rem;
 }
 
+/* Red / Maroon Theme for Homecoming */
+.theme-red {
+  --gold-dark: #7a1010;
+  --gold-primary: #a81c1c;
+  --gold-accent: #d42b2b;
+  --gold-light: #f5a9a9;
+  --primary: #a81c1c;
+  --secondary-foreground: #7a1010;
+  --accent-foreground: #7a1010;
+  --ring: #a81c1c;
+}
+
 @theme inline {
   --font-sans: 'Inter', 'Inter Fallback';
   --font-serif: 'Playfair Display', 'Playfair Display Fallback';
+  --color-gold-dark: var(--gold-dark);
+  --color-gold-primary: var(--gold-primary);
+  --color-gold-accent: var(--gold-accent);
+  --color-gold-light: var(--gold-light);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
