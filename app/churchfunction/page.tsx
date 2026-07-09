@@ -6,7 +6,6 @@ import HeroSection from '@/components/sections/HeroSection';
 import CeremonyDetails from '@/components/sections/CeremonyDetails';
 import CountdownSection from '@/components/sections/CountdownSection';
 import VenueLocation from '@/components/sections/VenueLocation';
-import RSVPSection from '@/components/sections/RSVPSection';
 import BlessingsSection from '@/components/sections/BlessingsSection';
 import FooterSection from '@/components/sections/FooterSection';
 import MusicPlayer from '@/components/MusicPlayer';
@@ -32,7 +31,6 @@ export default function ChurchFunction() {
           <CeremonyDetails hideReception={true} />
           <CountdownSection />
           <VenueLocation hideReception={true} />
-          <RSVPSection event="churchfunction" />
           <BlessingsSection event="churchfunction" />
           <FooterSection />
         </>
