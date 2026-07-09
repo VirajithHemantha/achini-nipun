@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const SONG_SRC = '/paulyudin-wedding-485932.mp3';
+const SONG_SRC = '/01-Alex_Warren_-_Ordinary_(Wedding_version).mp3';
 
 export default function MusicPlayer() {
     const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -94,7 +94,7 @@ export default function MusicPlayer() {
                             </svg>
                         </motion.span>
                         <span className="text-[11px] font-bold text-[#591420] uppercase tracking-wider">
-                            Tap for Wedding Music
+                            Tap for Homecoming Music
                         </span>
                     </motion.div>
                 )}

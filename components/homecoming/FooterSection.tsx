@@ -34,7 +34,7 @@ export default function FooterSection() {
             </div>
 
             <h2 className="mb-6 font-serif text-5xl font-medium tracking-wide text-[#3a3022] md:text-6xl">
-              A <span className="text-3xl text-[#a81c1c]">&</span> N
+              Nipun <span className="text-3xl text-[#a81c1c]">&</span> Achini
             </h2>
             <p className="mx-auto max-w-xl text-sm font-light leading-relaxed text-[#8c7a6b]">
               We look forward to sharing our joy and celebrating our holy union surrounded by the people we love most.
@@ -60,7 +60,7 @@ export default function FooterSection() {
         <div className="flex flex-col items-center justify-between gap-4 px-4 text-center text-xs font-semibold tracking-[0.1em] text-[#7a1010] md:flex-row md:text-left">
           <div className="space-y-2">
             <p className="!text-[#7a1010]">
-              &copy; {new Date().getFullYear()} ACHINI & NIPUN. All rights reserved.
+              &copy; {new Date().getFullYear()} NIPUN & ACHINI. All rights reserved.
             </p>
             <p className="!text-[#7a1010]">
               Design and created by <span className="!text-[#7a1010] font-bold">InviteMint</span> | Connect WhatsApp: <a href="https://wa.me/94707819074" target="_blank" rel="noopener noreferrer" className="!text-[#7a1010] hover:underline hover:text-[#a81c1c] transition-colors">+94 70 781 9074</a>

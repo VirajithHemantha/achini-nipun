@@ -144,7 +144,7 @@ export default function RSVPSection() {
             PLEASE RSVP BY 10TH OF JULY 2026
           </p>
           <p className="mx-auto mt-2 max-w-lg text-base text-[#8c7a6b] leading-relaxed uppercase tracking-[0.1em]">
-            ACHINI: 076 637 3619 | NIPUN: 071 237 7030
+            NIPUN: 071 237 7030 | ACHINI: 076 637 3619
           </p>
         </motion.div>
 

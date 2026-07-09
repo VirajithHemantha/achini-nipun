@@ -1,11 +1,32 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart } from 'lucide-react';
 
 interface EnvelopeOpenerProps {
   onEnvelopeOpen: () => void;
+}
+
+function GuestNameOnEnvelope() {
+  const searchParams = useSearchParams();
+  const prefix = searchParams.get('p');
+  const name = searchParams.get('n');
+
+  if (prefix && name) {
+    return (
+      <span className="relative inline-block mt-4 px-6 py-2">
+        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-lg"></span>
+        <span className="absolute bottom-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></span>
+        <span className="relative block font-serif italic text-2xl sm:text-3xl tracking-[0.15em] text-[#fdfbf7] drop-shadow-lg">
+          {prefix} {name}
+        </span>
+      </span>
+    );
+  }
+  
+  return null;
 }
 
 export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
@@ -193,8 +214,14 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
               <div className="flex flex-col items-center gap-3">
                 <span className="h-[2px] w-8 rounded-full bg-white/40" />
                 <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-white/90">
-                  A Wedding<br/>Invitation
+                  A Homecoming<br/>Invitation
                 </p>
+                <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/90 mt-2">
+                  We Cordially Invite
+                  <Suspense fallback={<div className="h-[30px]" />}>
+                    <GuestNameOnEnvelope />
+                  </Suspense>
+                </div>
               </div>
               <p className="text-[13px] tracking-[0.2em] text-white/70">
                 Unveil the moment

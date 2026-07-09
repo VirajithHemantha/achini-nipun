@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { EnvelopeOpener } from '@/components/homecoming/envelope-opener';
 import HeroSection from '@/components/homecoming/HeroSection';
+import InviteDetailsSection from '@/components/homecoming/InviteDetailsSection';
 import CeremonyDetails from '@/components/homecoming/CeremonyDetails';
 import CountdownSection from '@/components/homecoming/CountdownSection';
 import VenueLocation from '@/components/homecoming/VenueLocation';
@@ -29,6 +30,7 @@ export default function Homecoming() {
       ) : (
         <>
           <HeroSection />
+          <InviteDetailsSection />
           <CeremonyDetails />
           <CountdownSection />
           <VenueLocation />
